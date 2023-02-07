@@ -5,6 +5,7 @@
     --light-blue-color: #6B95B9;
     --error-msg-color: #F13F58;
     --light-red-color: #FFB6C1;
+    --imput-text-color: #292A2C;
 }
 
 section {
@@ -27,12 +28,14 @@ section {
 }
 
 .change-password-form__title {
+    margin: 40px 0 50px 0;
+
+    color: var(--main-blue-color);
+
     font-family: Manrope, sans-serif;
     font-weight: 600;
     font-size: 28px;
     line-height: 1.4;
-    color: var(--main-blue-color);
-    margin: 40px 0 50px 0;
 }
 
 .change-password-form__list {
@@ -49,36 +52,39 @@ section {
 }
 
 .change-password-form__label::before {
-    position: absolute;
     content: "*";
-    left: 11px;
 
+    position: absolute;
+    left: 11px;
     top: 50%;
     transform: translateY(-50%);
+
     color: #FFB6C1;
 }
 
 .change-password-form__field {
     width: 100%;
     height: 35px;
-    outline: none;
-    border: 0;
+
     padding-left: 30px;
 
+    outline: none;
+    border: 0;
     border-bottom: 1px solid var(--main-blue-color);
+    color: var(--imput-text-color);
 
     font-family: Inter, sans-serif;
     font-weight: 400;
     font-size: 18px;
     line-height: 1.4;
-    color: var(--light-blue-color);
 }
 
 .show-password {
+    content: "";
+
     position: absolute;
     right: 0;
 
-    content: "";
     width: 24px;
     height: 24px;
 
@@ -93,49 +99,29 @@ section {
     font-weight: 400;
     font-size: 15px;
     line-height: 1.4;
+
     color: var(--light-blue-color);
-}
-
-.error-massege {
-    position: absolute;
-    bottom: -60%;
-    left: 0;
-    opacity: 0;
-    padding-left: 7px;
-
-    font-family: Inter, sans-serif;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 1.38;
-    color: var(--error-msg-color);
-}
-
-.error-massege--active {
-    opacity: 1;
-}
-
-.error {
-    border-bottom: 1px solid var(--light-red-color);
 }
 
 .change-password-form__helper-text {
     position: relative;
+
     width: 100%;
     text-align: left;
     margin-left: 18px;
+
+    color: var(--main-blue-color);
 
     font-family: Inter, sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.4;
-
-    color: var(--main-blue-color);
 }
 
 .change-password-form__helper-text::before {
     content: "*";
-    color: #FFB6C1;
     margin-right: 10px;
+    color: #FFB6C1;
 }
 
 .change-password-form__submit-btn {
@@ -152,6 +138,7 @@ section {
     border-radius: 5px;
     text-align: left;
     background-color: var(--btn-color);
+    color: var(--btn-text-color);
 
     cursor: pointer;
 
@@ -159,7 +146,6 @@ section {
     font-weight: 400;
     font-size: 16px;
     line-height: 1.18;
-    color: var(--btn-text-color);
 }
 
 .change-password-form__submit-btn::after {
@@ -179,11 +165,35 @@ section {
 }
 
 .change-password-form__navigate-list-link {
+    color: var(--main-blue-color);
+
     font-family: Inter, sans-serif;
     font-weight: 600;
     font-size: 16px;
     line-height: 1.18;
-    color: var(--main-blue-color);
+}
+
+.error-massege {
+    position: absolute;
+    bottom: -60%;
+    left: 0;
+    opacity: 0;
+    padding-left: 7px;
+
+    color: var(--error-msg-color);
+
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 1.38;
+}
+
+.error-massege--active {
+    opacity: 1;
+}
+
+.error {
+    border-bottom: 1px solid var(--light-red-color);
 }
 
 @media screen and (max-width: 767px) {

@@ -56,6 +56,5 @@ refs.formRef.addEventListener("submit", (e) => {
         refs.fieldConfirmPasswordRef.classList.add("error");
     } else {
         refs.confirmPasswordErrorRef.classList.remove("error-massege--active");
-        refs.fieldConfirmPasswordRef.classList.remove("error");
     };
 });
