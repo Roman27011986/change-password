@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>change-password</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Manrope:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./normolize.css" />
+    <link rel="stylesheet" href="./index.css" />
+</head>
+<body>
+    <section>
+        <form class="change-password-form" id="change-password-form">
+            <a href="/">
+                <img 
+                    src="./images/logo.png" 
+                    width="128" 
+                    height="30"
+                    alt="logo post most"
+                >
+            </a>
+
+            <h3 class="change-password-form__title">Изменение пароля</h3>
+
+            <ul class="change-password-form__list">
+                <li class="change-password-form__list-item">
+                    <label class="change-password-form__label">
+                        <input
+                            class="change-password-form__field js-field-email" 
+                            type="email" 
+                            placeholder="Email / Логин"
+                        />
+                    </label>
+                </li>
+                <li class="change-password-form__list-item">
+                    <label class="change-password-form__label">
+                        <input 
+                            class="change-password-form__field js-field-control-string"
+                            type="text" 
+                            placeholder="Контрольная строка" 
+                        />
+                    </label>
+                    <span class="error-massege js-control-string-error">Неверное контрольное слово</span>
+                </li>
+                <li class="change-password-form__list-item">
+                    <label class="change-password-form__label">
+                        <input 
+                            class="change-password-form__field js-field-password"
+                            type="password" 
+                            placeholder="Новый пароль" 
+                        />
+                    </label>
+                    <button class="show-password" type="button"></button>
+                    <span class="error-massege js-password-error">Пароль должен быть не менее 6 символов</span>
+                </li>
+               <li class="change-password-form__list-item">
+                    <label class="change-password-form__label">
+                        <input 
+                            class="change-password-form__field js-field-confirm-password"
+                            type="password" 
+                            placeholder="Подтверждение пароля" 
+                        />
+                     </label>
+                     <span class="error-massege js-confirm-password-error">Пароли не совпадают</span>
+               </li>
+            </ul>
+
+            <p class="change-password-form__helper-text">Обязательные поля</p>
+
+            <button class="change-password-form__submit-btn">Изменить пароль</button>
+            
+            <ul class="change-password-form__navigate-list">
+                <li class="change-password-form__navigate-list-item">
+                    <a href="/" class="change-password-form__navigate-list-link">Зарегистироваться</a>
+                </li>
+                <li class="change-password-form__navigate-list-item">
+                    <a href="/" class="change-password-form__navigate-list-link">Войти</a>
+                </li>
+            </ul>
+        </form>
+    </section>
+
+    <script src="./index.js" type="module"></script>
+</body>
+</html>

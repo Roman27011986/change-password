@@ -1,0 +1,216 @@
+:root {
+    --btn-color: #FFD970;
+    --btn-text-color: #0E406A;
+    --main-blue-color: #2B689B;
+    --light-blue-color: #6B95B9;
+    --error-msg-color: #F13F58;
+    --light-red-color: #FFB6C1;
+}
+
+section {
+    padding: 55px 0;
+}
+
+.change-password-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+    padding: 40px 50px;
+
+    background: #FFFFFF;
+    box-shadow: 4px 4px 25px rgba(14, 76, 121, 0.18);
+    border-radius: 10px;
+}
+
+.change-password-form__title {
+    font-family: Manrope, sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 1.4;
+    color: var(--main-blue-color);
+    margin: 40px 0 50px 0;
+}
+
+.change-password-form__list {
+    width: 100%;
+}
+
+.change-password-form__list-item {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.change-password-form__label {
+    position: relative;
+}
+
+.change-password-form__label::before {
+    position: absolute;
+    content: "*";
+    left: 11px;
+
+    top: 50%;
+    transform: translateY(-50%);
+    color: #FFB6C1;
+}
+
+.change-password-form__field {
+    width: 100%;
+    height: 35px;
+    outline: none;
+    border: 0;
+    padding-left: 30px;
+
+    border-bottom: 1px solid var(--main-blue-color);
+
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.4;
+    color: var(--light-blue-color);
+}
+
+.show-password {
+    position: absolute;
+    right: 0;
+
+    content: "";
+    width: 24px;
+    height: 24px;
+
+    border: none;
+    background-image: url("./images/eye.png");
+    background-color: inherit;
+    cursor: pointer;
+}
+
+.change-password-form__field::placeholder {
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.4;
+    color: var(--light-blue-color);
+}
+
+.error-massege {
+    position: absolute;
+    bottom: -60%;
+    left: 0;
+    opacity: 0;
+    padding-left: 7px;
+
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 1.38;
+    color: var(--error-msg-color);
+}
+
+.error-massege--active {
+    opacity: 1;
+}
+
+.error {
+    border-bottom: 1px solid var(--light-red-color);
+}
+
+.change-password-form__helper-text {
+    position: relative;
+    width: 100%;
+    text-align: left;
+    margin-left: 18px;
+
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+
+    color: var(--main-blue-color);
+}
+
+.change-password-form__helper-text::before {
+    content: "*";
+    color: #FFB6C1;
+    margin-right: 10px;
+}
+
+.change-password-form__submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: 270px;
+    width: 100%;
+    margin: 30px 0 30px 0;
+    padding: 20px 40px;
+
+    border: none;
+    border-radius: 5px;
+    text-align: left;
+    background-color: var(--btn-color);
+
+    cursor: pointer;
+
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.18;
+    color: var(--btn-text-color);
+}
+
+.change-password-form__submit-btn::after {
+    content: "";
+    display: block;
+    width: 32px;
+    height: 9px;
+    background-image: url("../images/arrow.svg");
+}
+
+.change-password-form__navigate-list {
+    display: flex;
+}
+
+.change-password-form__navigate-list-item:not(:last-child) {
+    margin-right: 35px;
+}
+
+.change-password-form__navigate-list-link {
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.18;
+    color: var(--main-blue-color);
+}
+
+@media screen and (max-width: 767px) {
+
+    .change-password-form {
+        max-width: 350px;
+    }
+
+    .change-password-form__title {
+        font-size: 20px;
+    }
+
+    .change-password-form__field {
+        font-size: 15px;
+        height: 33px;
+    }
+
+    .change-password-form__helper-text {
+        font-size: 15px;
+    }
+
+    .change-password-form {
+        padding: 20px 30px;
+    }
+
+    .change-password-form__list-item {
+        position: relative;
+        margin-bottom: 30px;
+    }
+}
