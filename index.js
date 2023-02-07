@@ -5,9 +5,6 @@ const refs = {
     fieldControlStringRef: document.querySelector(".js-field-control-string"),
     fieldPasswordRef: document.querySelector(".js-field-password"),
     fieldConfirmPasswordRef: document.querySelector(".js-field-confirm-password"),
-    passwordErrorRef: document.querySelector(".js-password-error"),
-    controlStringErrorRef: document.querySelector(".js-control-string-error"),
-    confirmPasswordErrorRef: document.querySelector(".js-confirm-password-error"),
     showPasswordRef: document.querySelector(".show-password")
 };
 
@@ -21,40 +18,52 @@ refs.showPasswordRef.addEventListener("click", () => {
     }
 });
 
-function validateControlString (controlString) {
+function validateControlString(controlString) {
     const re = /^[a-zA-Z]+$/;
     return re.test(controlString);
 };
 
+function setError(input, value, massege) { 
+    input.classList.add("error");
+    const errorRef = input.parentElement.querySelector(".error-massege");
+    errorRef.textContent = value ? massege : "Заполните поле";
+}; 
+
+function setSuccess(input) { 
+    input.classList.remove("error");
+    const errorRef = input.parentElement.querySelector(".error-massege");
+    errorRef.textContent = "";
+}; 
+
 refs.formRef.addEventListener("submit", (e) => {
     e.preventDefault();
 
-   refs.formFieldsRef.forEach(input => {
-        if (input.value === "") {
-            input.classList.add("error");
-        } else {
-            input.classList.remove("error");
-        }
-    });
+    const email = refs.fieldEmailRef.value.trim();
+    const password = refs.fieldPasswordRef.value.trim();
+    const confirmedPassword = refs.fieldConfirmPasswordRef.value.trim();
+    const controlString = refs.fieldControlStringRef.value.trim();
 
-    if (refs.fieldPasswordRef.value.length < 6) {
-        refs.passwordErrorRef.classList.add("error-massege--active");
+    if (!email) {
+        setError(refs.fieldEmailRef, email, "Пароль должен быть не менее 6 символов");
     } else {
-        refs.passwordErrorRef.classList.remove("error-massege--active");
+        setSuccess(refs.fieldEmailRef);
     };
 
-    if (!validateControlString(refs.fieldControlStringRef.value)) {
-        refs.controlStringErrorRef.classList.add("error-massege--active");
-        refs.fieldControlStringRef.classList.add("error");
+    if (password.length < 6) {
+        setError(refs.fieldPasswordRef, password, "Пароль должен быть не менее 6 символов");
     } else {
-        refs.controlStringErrorRef.classList.remove("error-massege--active");
-        refs.fieldControlStringRef.classList.remove("error");
+        setSuccess(refs.fieldPasswordRef);
     };
 
-    if (refs.fieldPasswordRef.value !== refs.fieldConfirmPasswordRef.value) {
-        refs.confirmPasswordErrorRef.classList.add("error-massege--active");
-        refs.fieldConfirmPasswordRef.classList.add("error");
+    if (!validateControlString(controlString)) {
+        setError(refs.fieldControlStringRef, controlString, "Неверное контрольное слово");
     } else {
-        refs.confirmPasswordErrorRef.classList.remove("error-massege--active");
+        setSuccess(refs.fieldControlStringRef);
+    };
+  
+    if (!confirmedPassword || password !== confirmedPassword) {
+        setError(refs.fieldConfirmPasswordRef, confirmedPassword, "Пароли не совпадают");
+    } else {
+        setSuccess(refs.fieldConfirmPasswordRef);
     };
 });

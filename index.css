@@ -183,7 +183,6 @@ section {
     position: absolute;
     bottom: -60%;
     left: 0;
-    opacity: 0;
     padding-left: 7px;
 
     color: var(--error-msg-color);
@@ -194,8 +193,8 @@ section {
     line-height: 1.38;
 }
 
-.error-massege--active {
-    opacity: 1;
+.success {
+    opacity: 0;
 }
 
 .error {
