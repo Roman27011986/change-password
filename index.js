@@ -1,6 +1,5 @@
 const refs = {
     formRef: document.querySelector("#change-password-form"),
-    formFieldsRef: document.querySelectorAll(".change-password-form__field"),
     fieldEmailRef: document.querySelector(".js-field-email"),
     fieldControlStringRef: document.querySelector(".js-field-control-string"),
     fieldPasswordRef: document.querySelector(".js-field-password"),
