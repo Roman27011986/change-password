@@ -121,7 +121,7 @@ section {
 .change-password-form__helper-text::before {
     content: "*";
     margin-right: 10px;
-    color: #FFB6C1;
+    color: var(--light-red-color);
 }
 
 .change-password-form__submit-btn {
@@ -142,10 +142,16 @@ section {
 
     cursor: pointer;
 
+    transition: 500ms;
+
     font-family: Inter, sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.18;
+}
+
+.change-password-form__submit-btn:hover {
+    transform: scale(1.09);
 }
 
 .change-password-form__submit-btn::after {
@@ -222,5 +228,9 @@ section {
     .change-password-form__list-item {
         position: relative;
         margin-bottom: 30px;
+    }
+
+    .error-massege {
+        font-size: 11px;
     }
 }
