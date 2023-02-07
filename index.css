@@ -153,7 +153,7 @@ section {
     display: block;
     width: 32px;
     height: 9px;
-    background-image: url("../images/arrow.svg");
+    background-image: url("./images/arrow.svg");
 }
 
 .change-password-form__navigate-list {
